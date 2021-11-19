@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# 原地移除所有数值等于 val 的元素，并返回移除后数组的新长度
+# 原地移除所有数值等于 val 的元素，并返回移除后数组的新长度，不需要考虑超出新长度后的元素
 
 
 def removeElement(nums: list, val: int):
