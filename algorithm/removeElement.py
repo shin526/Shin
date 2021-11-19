@@ -4,12 +4,15 @@
 
 def removeElement(nums: list, val: int):
     size = len(nums)
-    k = 0
-    for i in range(size):
-        if nums[i] != val:
-            nums[k] = nums[i]
-            k += 1
-    return k
+    i, j = 0, 0
+    while j < size:
+        if nums[j] == val:
+            j += 1
+        else:
+            nums[i] = nums[j]
+            i += 1
+            j += 1
+    return i
 
 
 def main():
