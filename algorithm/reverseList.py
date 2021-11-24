@@ -15,12 +15,22 @@ def reverseList(head: ListNode):
         return pre
 
 
+def reverseList2(head: ListNode):
+    if not head or not head.next:
+        return head
+    else:
+        newHead = reverseList2(head.next)
+        head.next.next = head
+        head.next = None
+        return newHead
+
+
 def main():
     l1 = LinkedList()
     items = [1, 2, 3, 4, 5]
     for item in items:
         l1.addTail(item)
-    l1.head = reverseList(l1.head)
+    l1.head = reverseList2(l1.head)
     l1.display()
 
 
