@@ -20,7 +20,7 @@ def swapPairs2(head: ListNode):
     '''非递归'''
 
     # 指向新头结点
-    newHead = ListNode(0)
+    newHead = ListNode(next=head)
     newHead.next = head
     cur = newHead
     while cur.next and cur.next.next:

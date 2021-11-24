@@ -5,9 +5,9 @@
 class ListNode:
     __slots__ = ('val', 'next')
 
-    def __init__(self, val) -> None:
+    def __init__(self, val=0, next=None) -> None:
         self.val = val
-        self.next = None
+        self.next = next
 
 
 class LinkedList:
@@ -15,7 +15,7 @@ class LinkedList:
     __slots__ = ('head', 'length')
 
     def __init__(self) -> None:
-        self.head = ListNode(0)
+        self.head = ListNode()
         self.length = 0
 
     def get(self, index: int):
