@@ -34,6 +34,8 @@ def main():
         l1.addTail(item)
     l1.head = reverseList2(l1.head)
     l1.display()
+    l1.head = reverseList(l1.head)
+    l1.display()
 
 
 if __name__ == '__main__':
