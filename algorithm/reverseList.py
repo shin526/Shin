@@ -19,7 +19,9 @@ def reverseList2(head: ListNode):
     if not head or not head.next:
         return head
     else:
+        # newHead指向原链表最后一个结点，即新表头
         newHead = reverseList2(head.next)
+        # 退出一层后head指向倒数第二个结点，改变最后两个结点的指向
         head.next.next = head
         head.next = None
         return newHead
