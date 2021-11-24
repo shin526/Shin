@@ -6,6 +6,7 @@ from LinkedList import ListNode, LinkedList
 
 
 def swapPairs(head: ListNode):
+    '''递归'''
     if not head or not head.next:
         return head
     else:
@@ -15,11 +16,27 @@ def swapPairs(head: ListNode):
         return cur
 
 
+def swapPairs2(head: ListNode):
+    '''非递归'''
+
+    # 指向新头结点
+    newHead = ListNode(0)
+    newHead.next = head
+    cur = newHead
+    while cur.next and cur.next.next:
+        tmp = cur.next.next.next
+        cur.next, cur.next.next, cur.next.next.next = cur.next.next, cur.next, tmp
+        cur = cur.next.next
+    return newHead.next
+
+
 def main():
     l1 = LinkedList()
     items = [1, 2, 3, 4]
     for item in items:
         l1.addTail(item)
+    l1.head = swapPairs2(l1.head)
+    l1.display()
     l1.head = swapPairs(l1.head)
     l1.display()
 
