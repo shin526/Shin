@@ -51,6 +51,17 @@ class LinkedList:
             cur.next = node
         self.length += 1
 
+    def addNode(self, node: ListNode):
+        '''尾部插入结点'''
+        if self.length == 0:
+            self.head = node
+        else:
+            cur = self.head
+            while cur.next:
+                cur = cur.next
+            cur.next = node
+        self.length += 1
+
     def addIndex(self, index: int, val):
         '''在的第index个结点之前添加值为val的结点。
         若index等于链表的长度，则该结点插入到表尾。
@@ -106,3 +117,10 @@ if __name__ == '__main__':
     l1.deleteIndex(0)
     l1.display()
     print(l1.length)
+
+    A, B, C, D = [ListNode(x) for x in [1, 2, 3, 4]]
+    l2 = LinkedList()
+    for node in [A, B, C, D]:
+        l2.addNode(node)
+    l2.display()
+    print(l2.length)

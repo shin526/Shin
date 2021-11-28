@@ -17,14 +17,13 @@ def getIntersectionNode(headA: ListNode, headB: ListNode) -> ListNode:
 
 def main():
     A, B, C, D, E, F, G = [ListNode(x) for x in [1, 2, 3, 4, 5, 2, 1]]
-    A.next = B
-    B.next = C
-    C.next = D
-    D.next = E
-    G.next = F
-    F.next = C
 
     l1, l2, l3 = LinkedList(), LinkedList(), LinkedList()
+
+    for node in [A, B, C, D, E]:
+        l1.addNode(node)
+    for node in [G, F, C]:
+        l2.addNode(node)
 
     # items = [1, 2, 3, 4]
     # for item in items:
@@ -34,12 +33,7 @@ def main():
     # for item in items:
     #     l2.addTail(item)
 
-    l1.head = A
-    l1.length = 5
-    l2.head = G
-    l2.length = 5
-    l3.head = getIntersectionNode(l1.head, l2.head)
-    l3.length = 3
+    l3.addNode(getIntersectionNode(l1.head, l2.head))
     l1.display()
     l2.display()
     l3.display()
