@@ -12,7 +12,8 @@ def removeElement(nums: list, val: int):
             nums[i] = nums[j]
             i += 1
             j += 1
-    return i
+    # return i
+    return nums[:i]
 
 
 def main():
