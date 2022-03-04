@@ -16,12 +16,20 @@ def bag1(weights, values, bag):
     print(dp)
 
 
+def bag2(weights, values, bag):
+    dp = [0] * (bag + 1)
+    for i in range(len(weights)):
+        for j in range(bag, weights[i] - 1, -1):
+            dp[j] = max(dp[j], dp[j - weights[i]] + values[i])
+    print(dp)
+
+
 def main():
     weights = [1, 3, 4]
     values = [15, 20, 30]
     bag = 4
     # print(backpag(weights, values, bag))
-    bag1(weights, values, bag)
+    bag2(weights, values, bag)
 
 
 if __name__ == '__main__':
